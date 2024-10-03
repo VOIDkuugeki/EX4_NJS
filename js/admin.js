@@ -8,6 +8,7 @@ var productAdmin = function(){
       listproduct1+='<td>'+data.name+'</td>';
       listproduct1+='<td><img src="../img/'+data.img+'" alt="" style="width: 50px;"></td>';
       listproduct1+='<td>'+data.price+'</td>';
+      listproduct1+='<td>'+data.brand+'</td>';
      //  listproduct1+='';
       listproduct1+='<td><button onclick="updateProduct('
       +i+')" class="btn btn-outline-danger"  data-toggle="modal" data-target="#updateProduct"><i class="fas fa-cogs"></i></button>';
