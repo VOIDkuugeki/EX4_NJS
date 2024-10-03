@@ -24,6 +24,7 @@ var addProduct = function(){
         id :"SP"+parseInt( product.length+1),
         name : document.getElementById("name").value,
         img : document.getElementById("img").value,
+        brand: document.getElementById("brand").value,
         price : document.getElementById("price").value
     }
         product.push(Product);
@@ -47,6 +48,7 @@ var addProduct = function(){
         document.getElementById("imgd").value = k.img;
         document.getElementById("priced").value = k.price;
         document.getElementById("idd").setAttribute("disabled","disabled");
+        document.getElementById("brandd").value = k.brand;
         document.getElementById("submitUpdate").innerHTML = '<button class="btn btn-outline-danger mt-3" onclick="submitUpdate('+i+')"> Đồng ý</button>'
     }
     var submitUpdate = function(i){
@@ -55,6 +57,7 @@ var addProduct = function(){
         k.name= document.getElementById("named").value;
         k.img= document.getElementById("imgd").value;
         k.price= document.getElementById("priced").value;
+        k.brand= document.getElementById("brandd").value;
         localStorage.setItem('listProduct',JSON.stringify(product));
         window.location.reload();
     }
