@@ -57,7 +57,7 @@
         },
     ];
 // đẩy mảng product vào local
-    function Save(){
+    function save(){
         localStorage.setItem('listProduct',JSON.stringify(product))
     }
    //lấy sản phẩm 
@@ -68,7 +68,8 @@
    if (localStorage.getItem("listProduct") != null) {
     load();
 }
-Save();
+    save();
+
    var listLocal = function(){
        var listproduct ="";
        for (var i in product){
@@ -91,6 +92,14 @@ Save();
        }
        Save();
        
+   }
+
+   function searchList() {
+    var search = document.getElementById("search").value;
+    
+    return product.filter(function (product) {
+        return product.name.toLowerCase().includes(search);
+    });
    }
 
 listLocal();
