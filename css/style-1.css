@@ -550,3 +550,33 @@ color: aqua
 .card {
     width: auto;
 }
+
+#modalProductName {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+#modalProductBrand {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+#modalProductPrice {
+    font-size: 1.3rem;
+    color: #d9534f;
+    font-weight: bold;
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#modalProductImg {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+}

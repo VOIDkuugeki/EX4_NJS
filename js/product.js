@@ -92,7 +92,7 @@
     
     function displayProducts(products) {
         const banchayElement = document.getElementById("banchay");
-        banchayElement.innerHTML = ''; // Empty the banchay element
+        banchayElement.innerHTML = ''; // Empty product list
     
         products.forEach(product => {
             const data = JSON.parse(JSON.stringify(product));
@@ -102,11 +102,11 @@
     
     function generateProductHTML(data) {
         let listproduct = '<div class="col-lg-3 col-md-6 col-sm-6 col-6 mt-3">';
-        listproduct += '<div class="card product p-2" style="width:auto">';
+        listproduct += '<div class="card product p-2" style="width:auto" onclick="showProductModal(\'' + data.id + '\')">';
         listproduct += '<img class="card-img-top" src="img/' + data.img + '" alt="...">';
         listproduct += '<div class="card-title product-title text-center h5">' + data.name + '</div>';
         listproduct += '<div class="price text-center h6">' + data.price + '₫</div>';
-        listproduct += '<span class="text-center add-to-cart btn btn-outline-warning add-cart" data-id="' + data.id + '" data-name="' + data.name + '" data-img="' + data.img + '" data-price="' + data.price + '" onclick="tks()">';
+        listproduct += '<span class="text-center add-to-cart btn btn-outline-warning add-cart" data-id="' + data.id + '" data-name="' + data.name + '" data-img="' + data.img + '" data-price="' + data.price + '" onclick="tks(event)">';
         listproduct += '<a>';
         listproduct += '<i class="fas fa-cart-plus"></i>';
         listproduct += '</a>';
@@ -114,6 +114,22 @@
         listproduct += '</div>';
         listproduct += '</div>';
         return listproduct;
+    }
+
+    function showProductModal(productId) {
+        const product = getProductById(productId);
+        if (product) {
+            document.getElementById('modalProductImg').src = 'img/' + product.img;
+            document.getElementById('modalProductName').textContent = product.name;
+            document.getElementById('modalProductBrand').textContent = 'Brand: ' + product.brand;
+            document.getElementById('modalProductPrice').textContent = 'Price: ' + product.price + '₫';
+            $('#productModal').modal('show');
+        }
+    }
+
+    function getProductById(productId) {
+        console.log(product.find(p => p.id === productId));
+        return product.find(p => p.id === productId);
     }
 
 listLocal();
