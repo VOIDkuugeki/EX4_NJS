@@ -576,7 +576,6 @@ color: aqua
 }
 
 #modalProductImg {
-    width: auto;
-    max-width: 100%;
-    height: auto;
+    width: 40%;
+    height: 40%;
 }
